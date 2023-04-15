@@ -1,0 +1,26 @@
+docker ps
+docker pull mongo
+docker run -d -p 27017:27017 --name  shopping-mongo mongo     //run
+docker ps
+docker logs -f shopping-mongo   // log inceleme
+docker exec -it shopping-mongo  /bin/bash     //docker içinde terminali açar
+mongosh   //mongodb command line
+show dbs   
+show databases
+use catalogDb  // Create and switch new db
+db.createCollection('Products')   //yeni collection create eder
+db.Products.insert()   // kolleksiyona yeni kayýt ekler
+db.Products.insertMany([
+{},
+{}
+])     // çoklu kayýt ekler
+
+db.Products.find({}).pretty()   // kolleksiyondan datalarý filter olmadan çeker
+db.Products.remove({})          // kolleksiyondaki datalarýn tamamýný siler
+show collections
+
+
+
+//Nuget For MongoDb
+MongoDB.Driver
+Swashbuckle.AspNetCore
