@@ -18,3 +18,8 @@ services:
       - catalogdb
     ports:
       - "8000:80"
+
+  mongoclient:
+    container_name: mongoclient
+    ports:
+      - "3000:3000"   

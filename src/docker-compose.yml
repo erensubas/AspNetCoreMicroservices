@@ -8,6 +8,7 @@ services:
     build:
       context: .
       dockerfile: Services/Catalog/Catalog.API/Dockerfile
-
+  mongoclient:
+    image: mongoclient/mongoclient
 volumes:
   mongo_data:
