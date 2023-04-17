@@ -1,0 +1,14 @@
+docker pull redis
+docker run -d -p 6379:6379 --name aspnet-redis redis
+docker logs -f aspnet-redis
+docker exec -it aspnet-redis /bin/bash
+redis-cli
+ping
+set key deneme
+get key
+
+
+//Nuget Packages
+Microsoft.Extensions.Caching.StackExchangeRedis
+NewtonSoft.Json
+Swashbucke.AspNetCore
