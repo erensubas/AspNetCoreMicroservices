@@ -36,7 +36,7 @@ Swashbuckle.AspNetCore
 
 portainer:
 admin
-admin1234
+admin12345678
 
 
 //Docker Compose Commands
