@@ -1,3 +1,10 @@
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Ordering.Application;
+using Ordering.Infrastructure;
+using System.Reflection;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -7,7 +14,15 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+
+
+var ass = Assembly.GetExecutingAssembly();
+builder.Services.AddAutoMapper(ass);
+
 var app = builder.Build();
+
+builder.Services.AddApplicationServices();
+builder.Services.AddInfrastructureServices(app.Configuration);
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
